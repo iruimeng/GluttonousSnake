@@ -1,6 +1,4 @@
-package com.game.demo;
-
-import lombok.Data;
+package com.mt.snake;
 
 import java.util.Random;
 

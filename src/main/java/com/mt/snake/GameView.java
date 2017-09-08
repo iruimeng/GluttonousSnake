@@ -1,4 +1,4 @@
-package com.game.demo;
+package com.mt.snake;
 
 import javax.swing.*;
 import java.awt.*;

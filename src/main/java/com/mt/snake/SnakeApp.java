@@ -1,4 +1,4 @@
-package com.game.demo;
+package com.mt.snake;
 
 import javax.swing.*;
 import java.awt.*;
@@ -36,7 +36,6 @@ public class SnakeApp {
 
     public static void main(String[] args) {
         SnakeApp sa = new SnakeApp();
-
 
         sa.init();
     }

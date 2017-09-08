@@ -1,4 +1,4 @@
-package com.game.demo;
+package com.mt.snake;
 
 /**
  * Created by mengrui-g on 2017/9/8.

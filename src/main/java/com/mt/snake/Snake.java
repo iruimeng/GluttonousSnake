@@ -1,7 +1,6 @@
-package com.game.demo;
+package com.mt.snake;
 
 import java.util.LinkedList;
-import java.util.Map;
 
 /**
  * Created by mengrui-g on 2017/9/8.
