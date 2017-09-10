@@ -3,7 +3,7 @@ package com.mt.snake;
 import java.util.LinkedList;
 
 /**
- * Created by mengrui-g on 2017/9/8.
+ * Created by MT on 2017/9/8.
  */
 public class Snake {
 
@@ -11,6 +11,11 @@ public class Snake {
 
     private Direction direction;
 
+    /**
+     * 根据运动方向修过snake的body信息
+     * @param direction
+     * @return
+     */
     public Node move(Direction direction) {
 
         Node head = getHead();
@@ -19,7 +24,7 @@ public class Snake {
         switch (direction) {
             case UP:
                 x = head.getX();
-                y = head.getY() + 1;
+                y = head.getY() - 1;
                 break;
             case RIGHT:
                 x = head.getX() + 1;
@@ -27,7 +32,7 @@ public class Snake {
                 break;
             case DOWN:
                 x = head.getX();
-                y = head.getY() - 1;
+                y = head.getY() + 1;
                 break;
             case LEFT:
                 x = head.getX() - 1;
@@ -36,8 +41,8 @@ public class Snake {
         }
 
         Node nhead = new Node(x, y);
-        addTail(nhead);
-        return this.body.pollLast();
+        body.addFirst(nhead);
+        return body.pollLast();
     }
 
 

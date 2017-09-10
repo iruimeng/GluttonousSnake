@@ -3,7 +3,7 @@ package com.mt.snake;
 import lombok.Data;
 
 /**
- * Created by mengrui-g on 2017/9/8.
+ * Created by MT on 2017/9/8.
  */
 @Data
 public class Node {

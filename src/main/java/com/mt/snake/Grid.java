@@ -60,18 +60,21 @@ public class Grid {
 
     public boolean nextStep() {
         Node head = snake.getHead();
-
         //当前头是否合法的next
         if (isBoundary(head)) {
-
             //移动一步
             Node tail = snake.move(snakeDireciton);
-            //头部和食物吻合，再把尾巴添加回去
+
+            System.out.println("next Step");
+
+            //头部和食物吻合，再把尾巴添加回去。并重新生产food
             if (snake.getHead().equals(food)) {
                 snake.addTail(tail);
+                makeFood();
             }
             return true;
         }
+        System.out.println(isBoundary(head));
         return false;
     }
 
@@ -101,10 +104,9 @@ public class Grid {
         y = new Random().nextInt(Config.GRID_HEIGHT);
 
         System.out.println(x);
-        System.out.println(y);
 
-        food = new Node(x, y);
-        return food;
+        this.food = new Node(x, y);
+        return this.food;
     }
 
     public Snake getSnake() {

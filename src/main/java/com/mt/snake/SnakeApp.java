@@ -4,11 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by mengrui-g on 2017/9/8.
+ * Created by MT on 2017/9/8.
  */
-public class SnakeApp {
+public class SnakeApp implements Runnable {
 
-    public void init() {
+    public void run() {
 
         Grid grid = new Grid(Config.GRID_WIDTH, Config.GRID_HEIGHT);
 
@@ -26,17 +26,18 @@ public class SnakeApp {
         Container pane = window.getContentPane();
         pane.add(gv.getCanvas(), BorderLayout.CENTER);
 
-
         window.pack();
 
         window.setResizable(false);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
+
+        GameController gc = new GameController(grid, gv);
+        window.addKeyListener(gc);
+        new Thread(gc).start();
     }
 
     public static void main(String[] args) {
-        SnakeApp sa = new SnakeApp();
-
-        sa.init();
+        SwingUtilities.invokeLater(new SnakeApp());
     }
 }

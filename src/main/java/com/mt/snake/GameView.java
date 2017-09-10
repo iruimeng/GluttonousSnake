@@ -5,7 +5,7 @@ import java.awt.*;
 import java.util.*;
 
 /**
- * Created by mengrui-g on 2017/9/8.
+ * Created by MT on 2017/9/8.
  */
 public class GameView {
 
@@ -34,7 +34,10 @@ public class GameView {
         return canvas;
     }
 
-    public void draw(Graphics graphics) {
+    public void draw() {
+        Graphics graphics = canvas .getGraphics();
+        drawSnake(graphics, grid.getSnake());
+        drawFood(graphics, grid.getFood());
         canvas.repaint();
     }
 
@@ -65,7 +68,6 @@ public class GameView {
         Iterator<Node> it = snake.getBody().iterator();
         while (it.hasNext()) {
             Node n = it.next();
-            System.out.println(n);
             drawSquare(graphics, n, c);
         }
     }
@@ -79,5 +81,9 @@ public class GameView {
         drawCycle(graphics, grid.getFood(), Color.green);
     }
 
+    public void gameOver() {
+        JOptionPane.showMessageDialog(null, "游戏结束", "游戏结束", JOptionPane.INFORMATION_MESSAGE);
+        System.exit(0);
+    }
 
 }
