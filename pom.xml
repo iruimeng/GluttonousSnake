@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.game.demo</groupId>
-    <artifactId>GluttonSnake</artifactId>
+    <artifactId>GluttonousSnake</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
         <plugins>
